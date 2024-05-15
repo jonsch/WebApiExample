@@ -53,11 +53,6 @@ public class OrderService(IRepository<Order> orderRepository, ILogger<OrderServi
         }
     }
 
-    public Task DeleteByByIdAsync(int id)
-    {
-        throw new NotImplementedException();
-    }
-
     public async Task DeleteByIdAsync(int id)
     {
         try {
