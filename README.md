@@ -60,5 +60,7 @@ There are several opporunities within this solution:
 - It could include log aggregation and make reflect ```Serilog``` configuratons as well as some ```Sink``` demonstrations
 - It could make use of records and spans for memory and speed purposes (for this example it does not), apologies.
 - It could include more ```CI/CD actions```, just a basic build one is included here that runs a CI on PR against main.
+- It could include ```model validation``` on the server side using annotations and MVC helpers.
+- It could include and should breakout ```DTO```'s to seperate from db entities
 
 Perhaps when I get more time, I'll add to this, but I am swamped at work as of late. In the interim, please feel free to make it your own.
