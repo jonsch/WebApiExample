@@ -26,7 +26,7 @@ This project outlines using dotnet WebAPI controllers to establish a basic API t
 
 - **Database**
   - This solution uses ```SQLite``` for a small logical .db file to be used, ideally in any product you'd want an actual db service such as cosmos, sqlserver, postgres, MongoDB, FerretDB, Couch, MySQL, Maria, etc.  Because we used ```entity framework``` as an abstracted ```ORM``` and migration tool, we used a flag relational database file format
-  - This solution includes database migrations, while we have the initial migration in a pragmatic setting you'd also want to seed the database which can be done using the same tools and process outlined here.
+  - This solution includes database migrations, this solution has the initial db creation as well as a seed data for products.
   - ```Migrations``` currently run in startup as an example so that they dont need to be executed via the ```dotnet ef CLI```
 
 - **Docker**
