@@ -62,5 +62,6 @@ There are several opporunities within this solution:
 - It could include more ```CI/CD actions```, just a basic build one is included here that runs a CI on PR against main.
 - It could include ```model validation``` on the server side using annotations and MVC helpers.
 - It could include and should breakout ```DTO```'s to seperate from db entities
+- It could include a ```CQRS pattern``` to ensure faster reads vs writes for better performance (which is a need for high volume transactions) and ```MediatR``` can be used for this.
 
 Perhaps when I get more time, I'll add to this, but I am swamped at work as of late. In the interim, please feel free to make it your own.
