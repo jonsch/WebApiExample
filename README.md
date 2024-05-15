@@ -39,6 +39,14 @@ This example serves as a demonstraiton of a jump-off point for a strong API prod
 
 ------
 
+### How to get up and running
+- Make sure that you have docker installed on your device
+- From the root dir of the solution run the following ```docker-compose build``` and then ```docker-compose up``` if you want to disconnect from the terminal you can add the -d flag via the following ```docker-compose up -d```
+- Exposed ports ```80880```
+- Find API endpoints via ```http://localhost:8080/swagger``` once you're up and running
+
+------
+
 ### Opportunities
 There are several opporunities within this solution:
 - It could include ```IAC``` via ```Terraform``` or ```Pulumi``` to help establish ```Network Gateways (Azure) and AppServices with scale-out configurations``` or ```(Security Groups) for VPC's in AWS using ECS and EKS```
