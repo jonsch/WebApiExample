@@ -32,6 +32,9 @@ This project outlines using dotnet WebAPI controllers to establish a basic API t
 - **Docker**
   - This includes a ```Dockerfile``` with image reference, copy and build steps and the pertinent ```docker-compose``` to get the solution up and running
 
+- ***DDD (Domain Driven Design)***
+  - This solution shows how to operate core functionality and domains as well as ```isolate domain based data entities that can be separated into it's own solution and referenced within your API for cross project usage and better maintainability```, for this example they're included in the Domain folder/namespace.
+
 ------
 
 ### Why
