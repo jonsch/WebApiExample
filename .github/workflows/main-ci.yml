@@ -1,0 +1,25 @@
+name: .NET 8 CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.x'
+
+      - name: Restore .NET packages
+        run: dotnet restore ../../WebApiExample/WebApiExample.csproj
+
+      - name: Build solution
+        run: dotnet build ../../WebApiExample/WebApiExample.csproj --no-restore --configuration Release
