@@ -11,3 +11,4 @@ services:
       - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
     ports:
       - "8080:8080"
+    container_name: webapi_container
