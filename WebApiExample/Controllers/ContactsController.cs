@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using WebApiExample.Domain;
 using WebApiExample.Domain.Entities.Contacts;
 using WebApiExample.Domain.Services;
 
@@ -6,6 +8,7 @@ namespace WebApiExample.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize(Policy = Constants.ApiPolicyName)]
 public class ContactsController(IContactService contactService, ILogger<ContactsController> logger) : ControllerBase
 {
     [HttpGet]
