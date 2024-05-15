@@ -35,6 +35,9 @@ This project outlines using dotnet WebAPI controllers to establish a basic API t
 - **DDD (Domain Driven Design)**
   - This solution shows how to operate core functionality and domains as well as ```isolate domain based data entities that can be separated into it's own solution and referenced within your API for cross project usage and better maintainability```, for this example they're included in the Domain folder/namespace.
 
+- **Generics** 
+  - This solution includes basic usage and demonstration of how Generics can be applied to make more robust and reusable code.
+
 ------
 
 ### Why
