@@ -38,7 +38,7 @@ This project outlines using dotnet WebAPI controllers to establish a basic API t
 ------
 
 ### Why
-This example serves as a demonstraiton of a jump-off point for a strong API product that can be built on and added to. It's also aimed to help the tech community. Tech interview process(es) can be grueling with unnecessary homework assignments. This can serve as a baseline for future buildouts to extend what you have and expedite that process. I ```hope this helps someone``` or serves as a boilerplate in the future.
+This example serves as a demonstration of a jump-off point for a strong API product that can be built on and added to. It's also aimed to help the tech community. Tech interview process(es) can be grueling with unnecessary homework assignments. This can serve as a baseline for future buildouts to extend what you have and expedite that process. I ```hope this helps someone``` or serves as a boilerplate in the future.
 
 ------
 
