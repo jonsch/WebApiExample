@@ -67,4 +67,12 @@ There are several opporunities within this solution:
 - It could include and should breakout ```DTO```'s to seperate from db entities
 - It could include a ```CQRS pattern``` to ensure faster reads vs writes for better performance (which is a need for high volume transactions) and ```MediatR``` can be used for this.
 
+
+### Roadmap
+What I'd like to do with this from here as an example set...
+- Break apart the ```microservice``` into sustainable ```azure funcctions``` or ```aws lambdas``` to build 'true' ```serverless, scalable APIs by endpoint```
+- Consider implementing a ```pub/sub``` pattern using a ```bus architecture``` for high volume
+
+------
+
 Perhaps when I get more time, I'll add to this, but I am swamped at work as of late. In the interim, please feel free to make it your own.
