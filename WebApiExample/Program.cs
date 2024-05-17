@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApiExample.Domain.Auth.Handler;
 using WebApiExample.Domain.Configuration;
 using WebApiExample.Domain.Database.DbContext;
+using WebApiExample.Domain.Entities.OrderDetails;
 using WebApiExample.Domain.Filter;
 using WebApiExample.Domain.Repositories;
 using WebApiExample.Domain.Services;
@@ -42,6 +43,7 @@ builder.Services.AddSwaggerGen();
 
 /* add our di services */
 builder.Services.AddScoped(typeof(IRepository<>), typeof(RepositoryBase<>));
+builder.Services.AddScoped(typeof(IOrderDetailRepository<OrderDetail>), typeof(OrderDetailRepository));
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IContactService, ContactService>();
