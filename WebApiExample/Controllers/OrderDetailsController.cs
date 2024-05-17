@@ -25,4 +25,26 @@ public class OrderDetailsController(IOrderDetailService orderDetailService, ILog
         var orderDetails = await orderDetailService.GetAllByOrderId(orderId);
         return Ok(orderDetails);
     }
+    
+    [HttpPost]
+    public async Task<ActionResult> AddOrderDetail([FromBody] OrderDetail orderDetail)
+    {
+        await orderDetailService.AddAsync(orderDetail);
+        return Ok();
+    }
+    
+    [HttpPut]
+    public async Task<ActionResult> UpdateOrderDetail([FromBody] OrderDetail orderDetail)
+    {
+        await orderDetailService.UpdateAsync(orderDetail);
+        return Ok();
+    }
+    
+    [HttpDelete]
+    [Route("{id:int}")]
+    public async Task<ActionResult> DeleteOrderDetail(int id)
+    {
+        await orderDetailService.DeleteByIdAsync(id);
+        return Ok();
+    }
 }
