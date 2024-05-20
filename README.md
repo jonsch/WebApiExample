@@ -64,7 +64,7 @@ There are several opporunities within this solution:
 - It could make use of records and spans for memory and speed purposes (for this example it does not), apologies.
 - It could include more ```CI/CD actions```, just a basic build one is included here that runs a CI on PR against main.
 - It could include ```model validation``` on the server side using annotations and MVC helpers.
-- It could include and should breakout ```DTO```'s to seperate from db entities
+- It could include and should breakout ```DTO```'s to seperate from db entities, this is also important to control payload expectations within your API and within use of auto XML generation for Swagger.
 - It could include a ```CQRS pattern``` to ensure faster reads vs writes for better performance (which is a need for high volume transactions) and ```MediatR``` can be used for this.
 
 
