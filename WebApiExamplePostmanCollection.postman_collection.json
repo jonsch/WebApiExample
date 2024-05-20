@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "449b8b89-61dd-44eb-8aa7-6b9040794dd0",
+		"name": "WebApiExamplePostmanCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1893494"
+	},
+	"item": [
+		{
+			"name": "New Customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "8DF892B436164A8EA9043C76AE946E5C"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n  \"name\": \"ABC Company\",\n  \"addressLine1\": \"123 Main St\",\n  \"city\": \"Austin\",\n  \"state\": \"TX\",\n  \"zip\": \"000011\",\n  \"emailAddress\": \"john.doe@abc.co\",\n  \"phone\": \"000-000-0011\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "8DF892B436164A8EA9043C76AE946E5C"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n  \"customerId\": 1,\n  \"orderDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipMethod\": \"UPS Ground Standard\",\n  \"shipAddress\": \"445 Rubix Dr\",\n  \"shipCity\": \"Dallas\",\n  \"shipState\": \"TX\",\n  \"shipZip\": \"000022\",\n  \"shipPhone\": \"000-000-1100\",\n  \"orderDetails\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 1\n    },\n    {\n        \"productId\": 2,\n        \"quantity\": 1\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "8DF892B436164A8EA9043C76AE946E5C"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n  \"customerId\": 1,\n  \"orderDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipMethod\": \"UPS Ground Standard\",\n  \"shipAddress\": \"445 Rubix Dr\",\n  \"shipCity\": \"Dallas\",\n  \"shipState\": \"TX\",\n  \"shipZip\": \"000022\",\n  \"shipPhone\": \"000-000-1100\",\n  \"orderDetails\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 1\n    },\n    {\n        \"productId\": 2,\n        \"quantity\": 1\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
