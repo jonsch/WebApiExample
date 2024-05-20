@@ -10,4 +10,5 @@ public interface IOrderDetailService
     Task UpdateAsync(OrderDetail order);
     Task DeleteAsync(OrderDetail order);
     Task DeleteByIdAsync(int id);
+    Task<IEnumerable<OrderDetail>> GetAllByOrderId(int id);
 }

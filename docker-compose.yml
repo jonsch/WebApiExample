@@ -9,6 +9,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_CLI_TELEMETRY_OPTOUT=1
       - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+      - ASPNETCORE_HTTP_PORT=8080
     ports:
       - "8080:8080"
     container_name: webapi_container

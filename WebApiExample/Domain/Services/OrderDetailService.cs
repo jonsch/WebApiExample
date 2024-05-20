@@ -3,7 +3,7 @@ using WebApiExample.Domain.Repositories;
 
 namespace WebApiExample.Domain.Services;
 
-public class OrderDetailService(IRepository<OrderDetail> orderDetailRepository, ILogger<OrderDetailService> logger) : IOrderDetailService
+public class OrderDetailService(IOrderDetailRepository<OrderDetail> orderDetailRepository, ILogger<OrderDetailService> logger) : IOrderDetailService
 {
     public async Task<IEnumerable<OrderDetail>> GetAllAsync()
     {
@@ -58,6 +58,17 @@ public class OrderDetailService(IRepository<OrderDetail> orderDetailRepository, 
             await orderDetailRepository.DeleteByIdAsync(id);
         } catch (Exception ex) {
             logger.LogError("Error deleting order detail by id: {0}", ex.Message);
+        }
+    }
+    
+    public async Task<IEnumerable<OrderDetail>> GetAllByOrderId(int id)
+    {
+        try
+        {
+            return await orderDetailRepository.GetAllByOrderId(id);
+        } catch (Exception ex) {
+            logger.LogError("Error getting order details by order id: {0}", ex.Message);
+            return [];
         }
     }
 }

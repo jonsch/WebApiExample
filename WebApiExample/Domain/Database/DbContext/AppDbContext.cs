@@ -19,4 +19,17 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : Microsoft.En
     {
         
     }
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        //configure order relationships
+        modelBuilder.Entity<Order>()
+            .HasMany(o => o.OrderDetails);
+
+        //setup traversal / navigation properties
+        modelBuilder.Entity<Order>()
+            .Navigation(o => o.OrderDetails)
+            .UsePropertyAccessMode(PropertyAccessMode.Property)
+            .AutoInclude();
+    }
 }
