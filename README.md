@@ -5,7 +5,7 @@ This project outlines using dotnet WebAPI controllers to establish a basic API t
 
 - **SOLID Principles**
   - ```Single Responsibility```
-  - ```Open/Close``` (there are no test cases, otherwise we would use test cases to ensure non-breaking funcitonality or added functionality to classes)
+  - ```Open/Close```
   - ```Liskov Subtituion``` (we did not extend any classes but there is opportunity to do that)
   - ```Interface Segregation```
   - ```Dependency Injection```
@@ -38,6 +38,9 @@ This project outlines using dotnet WebAPI controllers to establish a basic API t
 - **Generics** 
   - This solution includes basic usage and demonstration of how Generics can be applied to make more robust and reusable code.
 
+- **IaC (Pulumi)**
+  - This codebase includes a ```pulumi``` folder that generates a basic ```resource group```, ```app service plan (linux, free)``` and an ```AppService in .NET8``` using ```Microsoft Azure```.
+
 ------
 
 ### Why
@@ -47,7 +50,7 @@ This example serves as a demonstration of a jump-off point for a strong API prod
 
 ### How to get up and running
 - Make sure that you have docker installed on your device
-- From the root dir of the solution run the following ```docker-compose build``` and then ```docker-compose up``` if you want to disconnect from the terminal you can add the -d flag via the following ```docker-compose up -d```
+- From the root dir of the solution run the following ```docker-compose up --build``` if you want to disconnect from the terminal you can add the -d flag via the following ```docker-compose up -d```
 - Exposed ports ```8080```
 - Find API endpoints via ```http://localhost:8080/swagger``` once you're up and running
 
@@ -55,7 +58,7 @@ This example serves as a demonstration of a jump-off point for a strong API prod
 
 ### Opportunities
 There are several opporunities within this solution:
-- It could include ```IAC``` via ```Terraform``` or ```Pulumi``` to help establish ```Network Gateways (Azure) and AppServices with scale-out configurations``` or ```(Security Groups) for VPC's in AWS using ECS and EKS```
+- It could include ```IAC``` via ```Terraform``` or ```Pulumi``` to help establish ```Network Gateways (Azure) and Scale-Out/Up configurations``` or ```(Security Groups) for VPC's in AWS using ECS and EKS```
 - It could be built out for ```Use```r context as mentioned above to support ```multiple api keys```
 - It could include a ```redis``` cache setup for key-value pairs that are heavily used for frequently queried items
 - It could include unit and integration tests (I started to lack free time on this, but they are important and could be added) making use of ```XUnit``` and ```FluentAssertions``` for multiple condition assertions on ```Controllers``` and ```Services``` as well as setup an InMemoryDatabase if you continued use ```EntityFramework```
