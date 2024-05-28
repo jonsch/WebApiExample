@@ -1,0 +1,7 @@
+name: WebApiPulumiAzure
+runtime: nodejs
+description: An IaC in TypeScript and Azure using an ACI
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: azure-typescript
