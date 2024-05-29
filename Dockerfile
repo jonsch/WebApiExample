@@ -5,12 +5,12 @@ WORKDIR /src
 
 # Copy csproj and restore as distinct layers
 COPY *.sln ./
-COPY WebApiExample/WebApiExample.csproj WebApiExample/
-RUN dotnet restore WebApiExample/WebApiExample.csproj
+COPY src/WebApiExample/WebApiExample.csproj src/WebApiExample/
+RUN dotnet restore src/WebApiExample/WebApiExample.csproj
 
 # copy project files for build
 COPY . .
-WORKDIR /src/WebApiExample
+WORKDIR /src/src/WebApiExample
 RUN dotnet build -c $BUILD_CONFIGURATION -o /app/build
 
 # publish
