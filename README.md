@@ -54,7 +54,7 @@ This example serves as a demonstration of a jump-off point for a strong API prod
 - Exposed ports ```8080```
 - Find API endpoints via ```http://localhost:8080/swagger``` once you're up and running
 
-> If you're interested in running the pulumi you'll need to ensure the install the```pulumi``` and ```azure cli```'s. Then after authenticating yourself in both, run ```pulumi up``` to ```create your infrastrcture```, or to destroy it (for pricing purposes) ```pulumi destroy```
+> If you're interested in running the pulumi you'll need to ensure the install the```pulumi``` and ```azure cli```'s. Then after authenticating yourself in both (```pulumi login``` & ```az login```), run ```pulumi up``` to ```create your infrastructure```, or to destroy it ```pulumi destroy```, for cost/testing purposes.
 
 ------
 
