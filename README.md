@@ -41,6 +41,9 @@ This project outlines using dotnet WebAPI controllers to establish a basic API t
 - **IaC (Pulumi)**
   - This codebase includes a ```pulumi``` folder that generates a basic ```resource group```, ```app service plan (linux, free)``` and an ```AppService in .NET8``` using ```Microsoft Azure```.
 
+- **OData Capabilities**
+  - Enabled ```OData``` within this ```API``` that demonstrates the ease of integration using the ```service``` and ```repository patterns``` for abstractions in your DAL while also allows a robust API with ```filter, search, paging, selection``` and ```aggregation``` capabilities with minimal effort, but maximum impact.
+
 ------
 
 ### Why
@@ -53,6 +56,7 @@ This example serves as a demonstration of a jump-off point for a strong API prod
 - From the root dir of the solution run the following ```docker-compose up --build``` if you want to disconnect from the terminal you can add the -d flag via the following ```docker-compose up -d```
 - Exposed ports ```8080```
 - Find API endpoints via ```http://localhost:8080/swagger``` once you're up and running
+- A postman collection is included in this repository for quick demonstration purposes
 
 > If you're interested in running the pulumi you'll need to ensure the install the```pulumi``` and ```azure cli```'s. Then after authenticating yourself in both (```pulumi login``` & ```az login```), run ```pulumi up``` to ```create your infrastructure```, or to destroy it ```pulumi destroy```, for cost/testing purposes.
 
@@ -77,6 +81,7 @@ There are several opporunities within this solution:
 What I'd like to do with this from here as an example set...
 - Break apart the ```microservice``` into sustainable ```azure funcctions``` or ```aws lambdas``` to build 'true' ```serverless, scalable APIs by endpoint```
 - Consider implementing a ```pub/sub``` pattern using a ```bus architecture``` for high volume
+- Add ```batch``` features for data processing on ```post```, ```put``` and ```delete``` operations for large payload / ```transactional``` data integrity which is essential for ```ERP``` solutions.
 
 ------
 
