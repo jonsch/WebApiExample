@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 using WebApiExample.Domain;
 using WebApiExample.Domain.Entities.Contacts;
 using WebApiExample.Domain.Services;
@@ -12,6 +13,7 @@ namespace WebApiExample.Controllers;
 public class ContactsController(IContactService contactService, ILogger<ContactsController> logger) : ControllerBase
 {
     [HttpGet]
+    [EnableQuery]
     public async Task<ActionResult<IEnumerable<Contact>>> GetContacts()
     {
         var contacts = await contactService.GetAllAsync();
@@ -20,6 +22,7 @@ public class ContactsController(IContactService contactService, ILogger<Contacts
 
     [HttpGet]
     [Route("{id:int}")]
+    [EnableQuery]
     public async Task<ActionResult<Contact>> GetContact(int id)
     {
         var contact = await contactService.GetByIdAsync(id);
