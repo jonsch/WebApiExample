@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 using WebApiExample.Domain;
 using WebApiExample.Domain.Entities.Products;
 using WebApiExample.Domain.Services;
@@ -12,6 +13,7 @@ namespace WebApiExample.Controllers;
 public class ProductsController(IProductService productService, ILogger<ProductsController> logger) : ControllerBase
 {
     [HttpGet]
+    [EnableQuery]
     public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
     {
         var products = await productService.GetAllAsync();
@@ -20,6 +22,7 @@ public class ProductsController(IProductService productService, ILogger<Products
 
     [HttpGet]
     [Route("{id:int}")]
+    [EnableQuery]
     public async Task<ActionResult<Product>> GetProduct(int id)
     {
         var product = await productService.GetByIdAsync(id);

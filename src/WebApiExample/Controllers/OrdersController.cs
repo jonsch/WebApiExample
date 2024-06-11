@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 using WebApiExample.Domain;
 using WebApiExample.Domain.Entities.Orders;
 using WebApiExample.Domain.Services;
@@ -12,6 +13,7 @@ namespace WebApiExample.Controllers;
 public class OrdersController(IOrderService orderService, ILogger<OrderService> logger) : ControllerBase
 {
     [HttpGet]
+    [EnableQuery]
     public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
     {
         var orders = await orderService.GetAllAsync();
@@ -20,6 +22,7 @@ public class OrdersController(IOrderService orderService, ILogger<OrderService> 
 
     [HttpGet]
     [Route("{id:int}")]
+    [EnableQuery]
     public async Task<ActionResult<Order>> GetOrder(int id)
     {
         var order = await orderService.GetByIdAsync(id);

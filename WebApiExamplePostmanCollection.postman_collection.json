@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "449b8b89-61dd-44eb-8aa7-6b9040794dd0",
+		"_postman_id": "2ccfdc48-31d3-44f3-95a5-3b4b9c8d0522",
 		"name": "WebApiExamplePostmanCollection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1893494"
@@ -106,6 +106,176 @@
 					"path": [
 						"api",
 						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "8DF892B436164A8EA9043C76AE946E5C"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n  \"customerId\": 1,\n  \"orderDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipMethod\": \"UPS Ground Standard\",\n  \"shipAddress\": \"445 Rubix Dr\",\n  \"shipCity\": \"Dallas\",\n  \"shipState\": \"TX\",\n  \"shipZip\": \"000022\",\n  \"shipPhone\": \"000-000-1100\",\n  \"orderDetails\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 1\n    },\n    {\n        \"productId\": 2,\n        \"quantity\": 1\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products OData Select Example",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "8DF892B436164A8EA9043C76AE946E5C"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n  \"customerId\": 1,\n  \"orderDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipMethod\": \"UPS Ground Standard\",\n  \"shipAddress\": \"445 Rubix Dr\",\n  \"shipCity\": \"Dallas\",\n  \"shipState\": \"TX\",\n  \"shipZip\": \"000022\",\n  \"shipPhone\": \"000-000-1100\",\n  \"orderDetails\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 1\n    },\n    {\n        \"productId\": 2,\n        \"quantity\": 1\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products?$select=name,description",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "name,description"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products OData Filter Name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "8DF892B436164A8EA9043C76AE946E5C"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n  \"customerId\": 1,\n  \"orderDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipMethod\": \"UPS Ground Standard\",\n  \"shipAddress\": \"445 Rubix Dr\",\n  \"shipCity\": \"Dallas\",\n  \"shipState\": \"TX\",\n  \"shipZip\": \"000022\",\n  \"shipPhone\": \"000-000-1100\",\n  \"orderDetails\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 1\n    },\n    {\n        \"productId\": 2,\n        \"quantity\": 1\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products?$filter=Name eq 'Product 1'",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "Name eq 'Product 1'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products OData Filter Name & Select Name,Description",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "8DF892B436164A8EA9043C76AE946E5C"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n  \"customerId\": 1,\n  \"orderDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipMethod\": \"UPS Ground Standard\",\n  \"shipAddress\": \"445 Rubix Dr\",\n  \"shipCity\": \"Dallas\",\n  \"shipState\": \"TX\",\n  \"shipZip\": \"000022\",\n  \"shipPhone\": \"000-000-1100\",\n  \"orderDetails\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 1\n    },\n    {\n        \"productId\": 2,\n        \"quantity\": 1\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products?$filter=Name eq 'Product 1'&$select=name,description",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "Name eq 'Product 1'"
+						},
+						{
+							"key": "$select",
+							"value": "name,description"
+						}
 					]
 				}
 			},

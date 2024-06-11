@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 using WebApiExample.Domain;
 using WebApiExample.Domain.Entities.Customers;
 using WebApiExample.Domain.Services;
@@ -13,6 +14,7 @@ public class CustomersController(ICustomerService customerService, ILogger<Custo
 {
 
     [HttpGet]
+    [EnableQuery]
     public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
     {
         var customers = await customerService.GetAllAsync();
@@ -21,6 +23,7 @@ public class CustomersController(ICustomerService customerService, ILogger<Custo
 
     [HttpGet]
     [Route("{id:int}")]
+    [EnableQuery]
     public async Task<ActionResult<Customer>> GetCustomer(int id)
     {
         var customer = await customerService.GetByIdAsync(id);
