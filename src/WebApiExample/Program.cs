@@ -8,6 +8,7 @@ using WebApiExample.Controllers;
 using WebApiExample.Domain.Auth.Handler;
 using WebApiExample.Domain.Configuration;
 using WebApiExample.Domain.Database.DbContext;
+using WebApiExample.Domain.Entities.Contacts;
 using WebApiExample.Domain.Entities.Customers;
 using WebApiExample.Domain.Entities.OrderDetails;
 using WebApiExample.Domain.Entities.Orders;
@@ -58,9 +59,6 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IOrderDetailService, OrderDetailService>();
 
 /* add controllers since we're not using endpoints, though we could */
-builder.Services.AddControllers();
-
-/* add odata */
 builder.Services.AddControllers().AddOData(opt => {
     var modelBuilder = new ODataConventionModelBuilder();
 
@@ -69,9 +67,17 @@ builder.Services.AddControllers().AddOData(opt => {
     modelBuilder.EntitySet<OrderDetail>("OrderDetails");
     modelBuilder.EntitySet<Product>("Products");
     modelBuilder.EntitySet<Customer>("Customers");
+    modelBuilder.EntitySet<Contact>("Contacts");
 
-    // setup options
-    opt.Select().Filter().OrderBy().Expand().Count().SetMaxTop(100).AddRouteComponents("odata", modelBuilder.GetEdmModel());
+    // setup option odata features
+    opt
+        .Select()
+        .Filter()
+        .OrderBy()
+        .Expand()
+        .Count()
+        .SetMaxTop(100)
+        .AddRouteComponents("odata", modelBuilder.GetEdmModel());
 });
 
 var app = builder.Build();
