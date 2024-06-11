@@ -39,9 +39,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
-builder.Services.AddScoped<IAuthorizationHandler, ApiKeyHandler>();
-
 /* auth services */
+builder.Services.AddScoped<IAuthorizationHandler, ApiKeyHandler>();
 builder.Services.AddTransient<IApiKeyValidation, ApiKeyValidation>();
 builder.Services.AddScoped<ApiKeyAuthFilter>();
 
