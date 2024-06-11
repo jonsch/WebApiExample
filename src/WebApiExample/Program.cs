@@ -1,10 +1,17 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.OData.ModelBuilder;
+using WebApiExample.Controllers;
 using WebApiExample.Domain.Auth.Handler;
 using WebApiExample.Domain.Configuration;
 using WebApiExample.Domain.Database.DbContext;
+using WebApiExample.Domain.Entities.Customers;
 using WebApiExample.Domain.Entities.OrderDetails;
+using WebApiExample.Domain.Entities.Orders;
+using WebApiExample.Domain.Entities.Products;
 using WebApiExample.Domain.Filter;
 using WebApiExample.Domain.Repositories;
 using WebApiExample.Domain.Services;
@@ -52,6 +59,20 @@ builder.Services.AddScoped<IOrderDetailService, OrderDetailService>();
 
 /* add controllers since we're not using endpoints, though we could */
 builder.Services.AddControllers();
+
+/* add odata */
+builder.Services.AddControllers().AddOData(opt => {
+    var modelBuilder = new ODataConventionModelBuilder();
+
+    // setup entity set
+    modelBuilder.EntitySet<Order>("Orders");
+    modelBuilder.EntitySet<OrderDetail>("OrderDetails");
+    modelBuilder.EntitySet<Product>("Products");
+    modelBuilder.EntitySet<Customer>("Customers");
+
+    // setup options
+    opt.Select().Filter().OrderBy().Expand().Count().SetMaxTop(100).AddRouteComponents("odata", modelBuilder.GetEdmModel());
+});
 
 var app = builder.Build();
 
