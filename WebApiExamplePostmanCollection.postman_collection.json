@@ -149,7 +149,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Products OData Select Example",
+			"name": "Get Products OData Extension, Select Example",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -192,7 +192,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Products OData Filter Name",
+			"name": "Get Products OData Extension, Filter Name",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -235,7 +235,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Products OData Filter Name & Select Name,Description",
+			"name": "Get Products OData Extension, Filter Name & Select Name,Description",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -265,6 +265,53 @@
 					"port": "8080",
 					"path": [
 						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "Name eq 'Product 1'"
+						},
+						{
+							"key": "$select",
+							"value": "name,description"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products OData - Filter Name & Select Name,Description",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "8DF892B436164A8EA9043C76AE946E5C"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n  \"customerId\": 1,\n  \"orderDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipDate\": \"2024-05-17T12:45:53.567Z\",\n  \"shipMethod\": \"UPS Ground Standard\",\n  \"shipAddress\": \"445 Rubix Dr\",\n  \"shipCity\": \"Dallas\",\n  \"shipState\": \"TX\",\n  \"shipZip\": \"000022\",\n  \"shipPhone\": \"000-000-1100\",\n  \"orderDetails\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 1\n    },\n    {\n        \"productId\": 2,\n        \"quantity\": 1\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/odata/products?$filter=Name eq 'Product 1'&$select=name,description",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"odata",
 						"products"
 					],
 					"query": [
