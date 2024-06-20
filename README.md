@@ -82,6 +82,7 @@ What I'd like to do with this from here as an example set...
 - Break apart the ```microservice``` into sustainable ```azure funcctions``` or ```aws lambdas``` to build 'true' ```serverless, scalable APIs by endpoint```
 - Consider implementing a ```pub/sub``` pattern using a ```bus architecture``` for high volume
 - Add ```batch``` features for data processing on ```post```, ```put``` and ```delete``` operations for large payload / ```transactional``` data integrity which is essential for ```ERP``` solutions.
+- Add a small ```UI``` to reflect secure interactions with the ```microservice```
 
 ------
 
